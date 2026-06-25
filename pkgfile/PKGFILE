@@ -60,7 +60,7 @@ depends=(
 	mako                    # Servidor de notificações Wayland
 	pipewire                # Servidor de áudio moderno
 	wireplumber             # Gerenciador de sessão para PipeWire
-	pwvucontrol             # Volume control applet for Pipewire
+	pavucontrol             # Volume control applet for Pipewire
 	xfce4-terminal          # Modern terminal emulator primarly for the Xfce desktop environment
 	alsa-pipewire
 	pulseaudio-utils
