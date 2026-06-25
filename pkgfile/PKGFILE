@@ -14,18 +14,55 @@ url="https://github.com/voidlinuxbr/${pkgname}"
 source=("git+${url}.git")
 md5sums=('SKIP')
 makedepends=()
-depends+=(sway)
-depends+=(foot wofi grim slurp brightnessctl eom)
-depends+=(fuse-exfat ffmpeg mesa-vaapi psmisc)
-depends+=(cpupower mesa-demos noto-fonts-ttf)
-depends+=(font-awesome)
-depends+=(optipng sassc jq swayidle swaylock sway-audio-idle-inhibit Waybar wmenu xdg-utils)
-depends+=(xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr rtkit)
-depends+=(mate-polkit kanshi Thunar thunar-archive-plugin)
-depends+=(engrampa cliphist mate-calc pluma nwg-look atril wl-clipboard mako)
-depends+=(voidbr-base-config)
-depends+=(voidbr-sway-config)
-depends+=(voidbr-theme-dracula)
+depends=(
+	sway                    # Compositor Wayland (substituto do i3wm)
+	foot                    # Terminal leve e otimizado para Wayland
+	wofi                    # Lançador de aplicativos e menu de busca
+	grim                    # Utilitário para captura de tela (screenshot)
+	slurp                   # Seleção de área para captura de tela
+	brightnessctl           # Controle de brilho via linha de comando
+	eom                     # Visualizador de imagens (Eye of MATE)
+	fuse-exfat              # Suporte para montagem de sistemas exFAT
+	ffmpeg                  # Ferramentas para manipulação de áudio e vídeo
+	mesa-dri                # Drivers gráficos (Direct Rendering Infrastructure)
+	mesa-vaapi              # Aceleração de vídeo via hardware (VA-API)
+	mesa-demos              # Coleção de ferramentas de teste para o Mesa
+	psmisc                  # Utilitários de processo (killall, fuser, pstree)
+	cpupower                # Ferramenta de gerenciamento de frequência da CPU
+	noto-fonts-ttf          # Fontes Noto da Google
+	font-awesome            # Fontes de ícones para barras e interfaces
+	optipng                 # Otimizador de compressão para arquivos PNG
+	sassc                   # Compilador CSS (SASS)
+	jq                      # Processador de arquivos JSON via CLI
+	swaylock                # Bloqueador de tela para Wayland
+	swayidle                # Gerenciador de inatividade (idle) e bloqueio
+	wl-clipboard            # Ferramentas de clipboard (wl-copy/wl-paste)
+	sway-audio-idle-inhibit # Inibe o bloqueio/hibernação durante reprodução de áudio
+	Waybar                  # Barra de status customizável para Wayland
+	wmenu                   # Menu de seleção estilo dmenu/wofi para Wayland
+	xdg-utils               # Ferramentas de integração com a área de trabalho
+	xdg-desktop-portal      # Camada de comunicação entre apps e o desktop
+	xdg-desktop-portal-gtk  # Implementação GTK do portal XDG
+	xdg-desktop-portal-wlr  # Implementação WLR (Sway) do portal XDG
+	rtkit                   # Gerenciamento de prioridade de tempo real
+	mate-polkit             # Agente de autenticação para permissões root
+	kanshi                  # Gerenciador dinâmico de monitores
+	Thunar                  # Gerenciador de arquivos (XFCE)
+	thunar-archive-plugin   # Integração de compactação no Thunar
+	engrampa                # Gerenciador de arquivos compactados
+	cliphist                # Histórico da área de transferência
+	mate-calc               # Calculadora do ambiente MATE
+	pluma                   # Editor de texto leve (MATE)
+	nwg-look                # Configurador de temas GTK para Wayland
+	atril                   # Visualizador de documentos (PDFs)
+	mako                    # Servidor de notificações Wayland
+  pipewire                # Servidor de áudio moderno
+  wireplumber             # Gerenciador de sessão para PipeWire
+  pipewire-pulse          # Camada de compatibilidade PulseAudio
+	voidbr-base-config      # Configuração base personalizada
+	voidbr-sway-config      # Configuração específica do Sway
+	voidbr-theme-dracula    # Tema visual Dracula aplicado
+)
 
 package() {
 	# Verify default folder
