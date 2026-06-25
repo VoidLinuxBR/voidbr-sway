@@ -16,6 +16,8 @@ md5sums=('SKIP')
 makedepends=()
 depends=(
 	sway                    # Compositor Wayland (substituto do i3wm)
+  dbus                    # Message bus system
+  elogind                 # Gerenciador de login e sessões (seat management)
 	foot                    # Terminal leve e otimizado para Wayland
 	wofi                    # Lançador de aplicativos e menu de busca
 	grim                    # Utilitário para captura de tela (screenshot)
@@ -58,7 +60,11 @@ depends=(
 	mako                    # Servidor de notificações Wayland
   pipewire                # Servidor de áudio moderno
   wireplumber             # Gerenciador de sessão para PipeWire
+  pwvucontrol             # Volume control applet for Pipewire
+  xfce4-terminal          # Modern terminal emulator primarly for the Xfce desktop environment 
   pipewire-pulse          # Camada de compatibilidade PulseAudio
+  NetworkManager          # Gerenciador de rede (daemon)
+  network-manager-applet  # Ícone de bandeja para controlar conexões
 	voidbr-base-config      # Configuração base personalizada
 	voidbr-sway-config      # Configuração específica do Sway
 	voidbr-theme-dracula    # Tema visual Dracula aplicado
@@ -97,6 +103,13 @@ pre_install() {
 }
 
 post_install() {
+	log "Ativando serviços"
+
+  ln -sf /etc/sv/dbus /var/service/
+  ln -sf /etc/sv/elogind /var/service/
+  ln -sf /etc/sv/NetworkManager /var/service/
+  ln -sf /etc/sv/rtkit /var/service/
+
 	log "Finalizando instalação"
 }
 
