@@ -62,7 +62,12 @@ depends=(
   wireplumber             # Gerenciador de sessão para PipeWire
   pwvucontrol             # Volume control applet for Pipewire
   xfce4-terminal          # Modern terminal emulator primarly for the Xfce desktop environment 
-  pipewire-pulse          # Camada de compatibilidade PulseAudio
+  alsa-pipewire
+  pulseaudio-utils
+  libspa-bluetooth
+  libjack-pipewire
+  alsa-plugins-pulseaudio
+  alsa-utils
   NetworkManager          # Gerenciador de rede (daemon)
   network-manager-applet  # Ícone de bandeja para controlar conexões
 	voidbr-base-config      # Configuração base personalizada
