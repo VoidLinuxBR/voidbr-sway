@@ -76,6 +76,7 @@ depends=(
 	voidbr-tokyo-theme     # TokyoNight-Dark theme with icons, cursors, and wallpaper
 	firefox                # Mozilla Firefox web browser
 	firefox-i18n-pt-BR     # Firefox Portuguese (Brazilian) language pack
+  nerd-fonts             # Iconic font aggregator collection
 )
 
 package() {
