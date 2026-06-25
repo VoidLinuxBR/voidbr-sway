@@ -16,8 +16,8 @@ md5sums=('SKIP')
 makedepends=()
 depends=(
 	sway                    # Compositor Wayland (substituto do i3wm)
-  dbus                    # Message bus system
-  elogind                 # Gerenciador de login e sessões (seat management)
+	dbus                    # Message bus system
+	elogind                 # Gerenciador de login e sessões (seat management)
 	foot                    # Terminal leve e otimizado para Wayland
 	wofi                    # Lançador de aplicativos e menu de busca
 	grim                    # Utilitário para captura de tela (screenshot)
@@ -58,21 +58,24 @@ depends=(
 	nwg-look                # Configurador de temas GTK para Wayland
 	atril                   # Visualizador de documentos (PDFs)
 	mako                    # Servidor de notificações Wayland
-  pipewire                # Servidor de áudio moderno
-  wireplumber             # Gerenciador de sessão para PipeWire
-  pwvucontrol             # Volume control applet for Pipewire
-  xfce4-terminal          # Modern terminal emulator primarly for the Xfce desktop environment 
-  alsa-pipewire
-  pulseaudio-utils
-  libspa-bluetooth
-  libjack-pipewire
-  alsa-plugins-pulseaudio
-  alsa-utils
-  NetworkManager          # Gerenciador de rede (daemon)
-  network-manager-applet  # Ícone de bandeja para controlar conexões
-	voidbr-base-config      # Configuração base personalizada
-	voidbr-sway-config      # Configuração específica do Sway
-	voidbr-theme-dracula    # Tema visual Dracula aplicado
+	pipewire                # Servidor de áudio moderno
+	wireplumber             # Gerenciador de sessão para PipeWire
+	pwvucontrol             # Volume control applet for Pipewire
+	xfce4-terminal          # Modern terminal emulator primarly for the Xfce desktop environment
+	alsa-pipewire
+	pulseaudio-utils
+	libspa-bluetooth
+	libjack-pipewire
+	alsa-plugins-pulseaudio
+	alsa-utils
+	NetworkManager         # Gerenciador de rede (daemon)
+	network-manager-applet # Ícone de bandeja para controlar conexões
+	voidbr-base-config     # Configuração base personalizada
+	voidbr-sway-config     # Configuração específica do Sway
+	voidbr-theme-dracula   # Tema visual Dracula aplicado
+	voidbr-tokyo-theme     # TokyoNight-Dark theme with icons, cursors, and wallpaper
+	firefox                # Mozilla Firefox web browser
+	firefox-i18n-pt-BR     # Firefox Portuguese (Brazilian) language pack
 )
 
 package() {
@@ -110,10 +113,10 @@ pre_install() {
 post_install() {
 	log "Ativando serviços"
 
-  ln -sf /etc/sv/dbus /var/service/
-  ln -sf /etc/sv/elogind /var/service/
-  ln -sf /etc/sv/NetworkManager /var/service/
-  ln -sf /etc/sv/rtkit /var/service/
+	ln -sf /etc/sv/dbus /var/service/
+	ln -sf /etc/sv/elogind /var/service/
+	ln -sf /etc/sv/NetworkManager /var/service/
+	ln -sf /etc/sv/rtkit /var/service/
 
 	log "Finalizando instalação"
 }
