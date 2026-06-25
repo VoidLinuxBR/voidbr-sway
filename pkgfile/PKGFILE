@@ -1,7 +1,8 @@
 # Maintainer: Vilmar Catafesta <vcatafesta@gmail.com>
+# Colaborator: Eduardo Charquero <eduardo.charquero@gmail.com>
 
-pkgname=voidbr-pkgname
-pkgdesc="Package template for VoidLinuxBR"
+pkgname=voidbr-sway
+pkgdesc="VoidBR SWAY Meta Package"
 pkgver=$(date +%Y%m%d)
 pkgrel=$(date +%H%M)
 provides=()
@@ -13,14 +14,18 @@ url="https://github.com/voidlinuxbr/${pkgname}"
 source=("git+${url}.git")
 md5sums=('SKIP')
 makedepends=()
-depends=()
-
-# Automatically detect and use the correct install file
-if [ -e "${pkgname}.install" ]; then
-	install=${pkgname}.install
-elif [ -e "pkgbuild.install" ]; then
-	install=pkgfile.install
-fi
+depends+=(sway)
+depends+=(foot wofi grim slurp brightnessctl eom)
+depends+=(fuse-exfat ffmpeg mesa-vaapi psmisc)
+depends+=(cpupower mesa-demos noto-fonts-ttf)
+depends+=(font-awesome)
+depends+=(optipng sassc jq swayidle swaylock sway-audio-idle-inhibit Waybar wmenu xdg-utils)
+depends+=(xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr rtkit)
+depends+=(mate-polkit kanshi Thunar thunar-archive-plugin)
+depends+=(engrampa cliphist mate-calc pluma nwg-look atril wl-clipboard mako)
+depends+=(voidbr-base-config)
+depends+=(voidbr-sway-config)
+depends+=(voidbr-theme-dracula)
 
 package() {
 	# Verify default folder
