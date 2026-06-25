@@ -115,10 +115,10 @@ pre_install() {
 post_install() {
 	log "Ativando serviços"
 
-  [ -e /var/service/dbus ] || ln -sf /etc/sv/dbus /var/service/
-  [ -e /var/service/elogind ] || ln -sf /etc/sv/elogind /var/service/
-  [ -e /var/service/NetworkManager ] || ln -sf /etc/sv/NetworkManager /var/service/
-  [ -e /var/service/rtkit ] || ln -sf /etc/sv/rtkit /var/service/
+  ln -sf /etc/sv/dbus /var/service/ 2>/dev/null || true
+  ln -sf /etc/sv/elogind /var/service/ 2>/dev/null || true
+  ln -sf /etc/sv/NetworkManager /var/service/ 2>/dev/null || true
+  ln -sf /etc/sv/rtkit /var/service/ 2>/dev/null || true
 
 	log "Finalizando instalação"
 }
