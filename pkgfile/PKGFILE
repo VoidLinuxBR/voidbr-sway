@@ -71,7 +71,7 @@ depends=(
 	NetworkManager         # Gerenciador de rede (daemon)
 	network-manager-applet # Ícone de bandeja para controlar conexões
 	voidbr-base-config     # Configuração base personalizada
-	voidbr-sway-config     # Configuração específica do Sway
+#	voidbr-sway-config     # Configuração específica do Sway
 	voidbr-theme-dracula   # Tema visual Dracula aplicado
 	voidbr-tokyo-theme     # TokyoNight-Dark theme with icons, cursors, and wallpaper
 	firefox                # Mozilla Firefox web browser
