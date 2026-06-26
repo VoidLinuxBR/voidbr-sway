@@ -78,6 +78,8 @@ depends=(
 	firefox-i18n-pt-BR     # Firefox Portuguese (Brazilian) language pack
   nerd-fonts             # Iconic font aggregator collection
   lm_sensors             # Utilities to read temperature/voltage/fan sensors
+  xdg-user-dirs-gtk      # GTK+ tool to help manage user directories
+  xdg-user-dirs          # Tool to help manage user directories
 )
 
 package() {
