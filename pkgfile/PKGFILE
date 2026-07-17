@@ -20,7 +20,7 @@ depends=(
 	elogind                 # Gerenciador de login e sessões (seat management)
 	foot                    # Terminal leve e otimizado para Wayland
 	wofi                    # Lançador de aplicativos e menu de busca
-	roti
+	rofi
 	grim                    # Utilitário para captura de tela (screenshot)
 	slurp                   # Seleção de área para captura de tela
 	brightnessctl           # Controle de brilho via linha de comando
