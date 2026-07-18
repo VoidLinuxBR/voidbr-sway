@@ -84,6 +84,9 @@ depends=(
   xdg-user-dirs          # Tool to help manage user directories
   acpi                   # Informations about ACPI devices (battery, thermal sensors and power)
   acpid                  # ACPI Daemon (acpid) With Netlink Support
+  sddm                   # QML based X11 display manager
+  voidbr-sddm-themes     # Sddm Themes for VoidLinuxBR
+  weston                 # Reference implementation of a Wayland compositor
   qt5-wayland            # Cross-platform application and UI framework (QT5) - Wayland component
   qt6-wayland            # Cross-platform application and UI framework - Wayland
 )
