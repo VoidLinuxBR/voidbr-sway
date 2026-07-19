@@ -89,6 +89,7 @@ depends=(
   weston                 # Reference implementation of a Wayland compositor
   qt5-wayland            # Cross-platform application and UI framework (QT5) - Wayland component
   qt6-wayland            # Cross-platform application and UI framework - Wayland
+  htop                   # Interactive process viewer
 )
 
 package() {
