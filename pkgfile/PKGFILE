@@ -71,10 +71,15 @@ depends=(
 	alsa-utils
 	NetworkManager         # Gerenciador de rede (daemon)
 	network-manager-applet # Ícone de bandeja para controlar conexões
-#	voidbr-base-config     # Configuração base personalizada
-#	voidbr-sway-config     # Configuração específica do Sway
+	voidbr-base-config     # Configuração base personalizada
+	voidbr-sway-config     # Configuração específica do Sway
 	voidbr-theme-dracula   # Tema visual Dracula aplicado
 	voidbr-tokyo-theme     # TokyoNight-Dark theme with icons, cursors, and wallpaper
+  voidbr-wallpapers
+  voidbr-dracula-theme
+  voidbr-professional-theme
+  voidbr-xfwm-axiom-theme
+  voidbr-beauty-icons
 	firefox                # Mozilla Firefox web browser
 	firefox-i18n-pt-BR     # Firefox Portuguese (Brazilian) language pack
 # nerd-fonts             # Iconic font aggregator collection
