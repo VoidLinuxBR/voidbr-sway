@@ -95,6 +95,7 @@ depends=(
   qt5-wayland            # Cross-platform application and UI framework (QT5) - Wayland component
   qt6-wayland            # Cross-platform application and UI framework - Wayland
   htop                   # Interactive process viewer
+  nwg-bar                # GTK3-based button bar for wlroots-based compositors
 )
 
 package() {
