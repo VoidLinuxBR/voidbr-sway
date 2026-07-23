@@ -96,6 +96,7 @@ depends=(
   qt6-wayland            # Cross-platform application and UI framework - Wayland
   htop                   # Interactive process viewer
   nwg-bar                # GTK3-based button bar for wlroots-based compositors
+  gnome-system-monitor   # Process viewer and system resource monitor for GNOME
 )
 
 package() {
