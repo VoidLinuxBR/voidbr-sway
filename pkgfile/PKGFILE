@@ -71,19 +71,20 @@ depends=(
 	libjack-pipewire
 	alsa-plugins-pulseaudio
 	alsa-utils
-	NetworkManager         # Gerenciador de rede (daemon)
-	network-manager-applet # Ícone de bandeja para controlar conexões
-	voidbr-base-config     # Configuração base personalizada
-	voidbr-sway-config     # Configuração específica do Sway
-	voidbr-tokyo-theme     # TokyoNight-Dark theme with icons, cursors, and wallpaper
+	NetworkManager            # Gerenciador de rede (daemon)
+	network-manager-applet    # Ícone de bandeja para controlar conexões
+	voidbr-base-config        # Configuração base personalizada
+	voidbr-sway-config        # Configuração específica do Sway
+	voidbr-tokyo-theme        # TokyoNight-Dark theme with icons, cursors, and wallpaper
   voidbr-wallpapers
 # voidbr-dracula-theme
 # voidbr-professional-theme
 # voidbr-xfwm-axiom-theme
   voidbr-beauty-icons
-	firefox                # Mozilla Firefox web browser
-	firefox-i18n-pt-BR     # Firefox Portuguese (Brazilian) language pack
-  ttf-jetbrains-mono-nerd
+	firefox                   # Mozilla Firefox web browser
+	firefox-i18n-pt-BR        # Firefox Portuguese (Brazilian) language pack
+  ttf-jetbrains-mono-nerd   # Patched font JetBrains Mono from nerd fonts library
+  ttf-ubuntu-font-family    # Ubuntu font family
   lm_sensors             # Utilities to read temperature/voltage/fan sensors
   xdg-user-dirs-gtk      # GTK+ tool to help manage user directories
   xdg-user-dirs          # Tool to help manage user directories
