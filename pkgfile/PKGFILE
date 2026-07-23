@@ -56,7 +56,9 @@ depends=(
 	cliphist                # Histórico da área de transferência
 	mate-calc               # Calculadora do ambiente MATE
 	pluma                   # Editor de texto leve (MATE)
-	nwg-look                # Configurador de temas GTK para Wayland
+  nwg-look                  # Configurador de temas GTK para Wayland
+  nwg-bar                   # GTK3-based button bar for wlroots-based compositors
+  nwg-launchers             # GTK-based launchers for window managers
 	atril                   # Visualizador de documentos (PDFs)
 	mako                    # Servidor de notificações Wayland
 	pipewire                # Servidor de áudio moderno
@@ -93,7 +95,6 @@ depends=(
   qt5-wayland            # Cross-platform application and UI framework (QT5) - Wayland component
   qt6-wayland            # Cross-platform application and UI framework - Wayland
   htop                   # Interactive process viewer
-  nwg-bar                # GTK3-based button bar for wlroots-based compositors
   gnome-system-monitor   # Process viewer and system resource monitor for GNOME
   kitty                  # Modern, hackable, featureful, OpenGL based terminal emulator
   gnome-keyring          # GNOME password and secret manager
