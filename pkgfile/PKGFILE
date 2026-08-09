@@ -1,5 +1,4 @@
 # Maintainer: Vilmar Catafesta <vcatafesta@gmail.com>
-# Colaborator: Eduardo Charquero <eduardo.charquero@gmail.com>
 
 pkgname=voidbr-sway
 pkgdesc="VoidBR SWAY Meta Package"
@@ -15,93 +14,37 @@ source=("git+${url}.git")
 md5sums=('SKIP')
 makedepends=()
 depends=(
-	sway                    # Compositor Wayland (substituto do i3wm)
-	dbus                    # Message bus system
-	elogind                 # Gerenciador de login e sessões (seat management)
-	foot                    # Terminal leve e otimizado para Wayland
-	wofi                    # Lançador de aplicativos e menu de busca
-	rofi
-	grim                    # Utilitário para captura de tela (screenshot)
-	slurp                   # Seleção de área para captura de tela
-	brightnessctl           # Controle de brilho via linha de comando
+	voidbr-base-common
+	voidbr-wayland-common
+	voidbr-gui-common
+	atril                   # Visualizador de documentos (PDFs)
+	cliphist                # Histórico da área de transferência
+	engrampa                # Gerenciador de arquivos compactados
 	eom                     # Visualizador de imagens (Eye of MATE)
-	fuse-exfat              # Suporte para montagem de sistemas exFAT
-	ffmpeg                  # Ferramentas para manipulação de áudio e vídeo
-	mesa-dri                # Drivers gráficos (Direct Rendering Infrastructure)
-	mesa-vaapi              # Aceleração de vídeo via hardware (VA-API)
-	mesa-demos              # Coleção de ferramentas de teste para o Mesa
-	psmisc                  # Utilitários de processo (killall, fuser, pstree)
-	cpupower                # Ferramenta de gerenciamento de frequência da CPU
-	noto-fonts-ttf          # Fontes Noto da Google
-	font-awesome            # Fontes de ícones para barras e interfaces
-	optipng                 # Otimizador de compressão para arquivos PNG
-	sassc                   # Compilador CSS (SASS)
-	jq                      # Processador de arquivos JSON via CLI
-	swaylock                # Bloqueador de tela para Wayland
-	swayidle                # Gerenciador de inatividade (idle) e bloqueio
-	wl-clipboard            # Ferramentas de clipboard (wl-copy/wl-paste)
-	sway-audio-idle-inhibit # Inibe o bloqueio/hibernação durante reprodução de áudio
-	Waybar                  # Barra de status customizável para Wayland
-	wmenu                   # Menu de seleção estilo dmenu/wofi para Wayland
-	xdg-utils               # Ferramentas de integração com a área de trabalho
-	xdg-desktop-portal      # Camada de comunicação entre apps e o desktop
-	xdg-desktop-portal-gtk  # Implementação GTK do portal XDG
-	xdg-desktop-portal-wlr  # Implementação WLR (Sway) do portal XDG
-	rtkit                   # Gerenciamento de prioridade de tempo real
-	mate-polkit             # Agente de autenticação para permissões root
+	foot                    # Terminal leve e otimizado para Wayland
+	gnome-system-monitor    # Process viewer and system resource monitor for GNOME
+	grim                    # Utilitário para captura de tela (screenshot)
 	kanshi                  # Gerenciador dinâmico de monitores
+	mako                    # Servidor de notificações Wayland
+	nwg-bar                 # GTK3-based button bar for wlroots-based compositors
+	nwg-launchers           # GTK-based launchers for window managers
+	nwg-look                # Configurador de temas GTK para Wayland
+	pluma                   # Editor de texto leve (MATE)
+	rofi                    # Window switcher, run dialog and dmenu replacement
+	slurp                   # Seleção de área para captura de tela
+	sway                    # Compositor Wayland (substituto do i3wm)
+	sway-audio-idle-inhibit # Inibe o bloqueio/hibernação durante reprodução de áudio
+	swayidle                # Gerenciador de inatividade (idle) e bloqueio
+	swaylock                # Bloqueador de tela para Wayland
 	Thunar                  # Gerenciador de arquivos (XFCE)
 	thunar-archive-plugin   # Integração de compactação no Thunar
-	engrampa                # Gerenciador de arquivos compactados
-	cliphist                # Histórico da área de transferência
-	mate-calc               # Calculadora do ambiente MATE
-	pluma                   # Editor de texto leve (MATE)
-  nwg-look                  # Configurador de temas GTK para Wayland
-  nwg-bar                   # GTK3-based button bar for wlroots-based compositors
-  nwg-launchers             # GTK-based launchers for window managers
-	atril                   # Visualizador de documentos (PDFs)
-	mako                    # Servidor de notificações Wayland
-	pipewire                # Servidor de áudio moderno
-	wireplumber             # Gerenciador de sessão para PipeWire
-	pavucontrol             # Volume control applet for Pipewire
-	xfce4-terminal          # Modern terminal emulator primarly for the Xfce desktop environment
-	alsa-pipewire
-	pulseaudio-utils
-	libspa-bluetooth
-	libjack-pipewire
-	alsa-plugins-pulseaudio
-	alsa-utils
-	NetworkManager            # Gerenciador de rede (daemon)
-	network-manager-applet    # Ícone de bandeja para controlar conexões
-	voidbr-base-config        # Configuração base personalizada
-	voidbr-sway-config        # Configuração específica do Sway
-	voidbr-tokyo-theme        # TokyoNight-Dark theme with icons, cursors, and wallpaper
-  voidbr-wallpapers
-# voidbr-dracula-theme
-# voidbr-professional-theme
-# voidbr-xfwm-axiom-theme
-  voidbr-beauty-icons
-	firefox                   # Mozilla Firefox web browser
-	firefox-i18n-pt-BR        # Firefox Portuguese (Brazilian) language pack
-  ttf-jetbrains-mono-nerd   # Patched font JetBrains Mono from nerd fonts library
-  ttf-ubuntu-font-family    # Ubuntu font family
-  lm_sensors             # Utilities to read temperature/voltage/fan sensors
-  xdg-user-dirs-gtk      # GTK+ tool to help manage user directories
-  xdg-user-dirs          # Tool to help manage user directories
-  acpi                   # Informations about ACPI devices (battery, thermal sensors and power)
-  acpid                  # ACPI Daemon (acpid) With Netlink Support
-  sddm                   # QML based X11 display manager
-  voidbr-sddm-themes     # Sddm Themes for VoidLinuxBR
-  weston                 # Reference implementation of a Wayland compositor
-  qt5-wayland            # Cross-platform application and UI framework (QT5) - Wayland component
-  qt6-wayland            # Cross-platform application and UI framework - Wayland
-  htop                   # Interactive process viewer
-  gnome-system-monitor   # Process viewer and system resource monitor for GNOME
-  kitty                  # Modern, hackable, featureful, OpenGL based terminal emulator
-  gnome-keyring          # GNOME password and secret manager
-  qt5ct                  # Qt5 Configuration Tool
-  qt6ct                  # Qt6 Configuration Tool
-  yad
+	voidbr-sway-config      # Configuração específica do Sway
+	Waybar                  # Barra de status customizável para Wayland
+	wl-clipboard            # Ferramentas de clipboard (wl-copy/wl-paste)
+	wmenu                   # Menu de seleção estilo dmenu/wofi para Wayland
+	wofi                    # Lançador de aplicativos e menu de busca
+	xdg-desktop-portal-wlr  # Implementação WLR (Sway) do portal XDG
+	yad
 )
 
 package() {
@@ -139,10 +82,10 @@ pre_install() {
 post_install() {
 	log "Ativando serviços"
 
-  ln -sf /etc/sv/dbus /var/service/ 2>/dev/null || true
-  ln -sf /etc/sv/elogind /var/service/ 2>/dev/null || true
-  ln -sf /etc/sv/NetworkManager /var/service/ 2>/dev/null || true
-  ln -sf /etc/sv/rtkit /var/service/ 2>/dev/null || true
+	ln -sf /etc/sv/dbus /var/service/ 2>/dev/null || true
+	ln -sf /etc/sv/elogind /var/service/ 2>/dev/null || true
+	ln -sf /etc/sv/NetworkManager /var/service/ 2>/dev/null || true
+	ln -sf /etc/sv/rtkit /var/service/ 2>/dev/null || true
 
 	log "Finalizando instalação"
 }

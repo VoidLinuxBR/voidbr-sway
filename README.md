@@ -1,3 +1,3 @@
 # voidbr-sway
 
-VoidBR SWAY Meta Package 
+VoidBR SWAY Meta Package
