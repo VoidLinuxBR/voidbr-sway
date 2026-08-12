@@ -80,14 +80,16 @@ pre_install() {
 }
 
 post_install() {
-	log "Ativando serviços"
+	if [ -n "$user" ]; then
+		log "Aplicando configuracoes para $user"
+		voidbr-copy-skel-inc --user "$user" --force --quiet
+	fi
 
-	ln -sf /etc/sv/dbus /var/service/ 2>/dev/null || true
-	ln -sf /etc/sv/elogind /var/service/ 2>/dev/null || true
-	ln -sf /etc/sv/NetworkManager /var/service/ 2>/dev/null || true
-	ln -sf /etc/sv/rtkit /var/service/ 2>/dev/null || true
+	log "Ativando serviços"
+	vservice add sddm --quiet
 
 	log "Finalizando instalação"
+	log "${YELLOW}Instalação completa. Reinicie o sistema...${RESET}"
 }
 
 pre_upgrade() {
