@@ -46,18 +46,22 @@ depends=(
 	xdg-desktop-portal-wlr  # Implementação WLR (Sway) do portal XDG
 	yad
 )
+backup=()
 
 package() {
 	# Verify default folder
 	if [ -d "${srcdir}/${pkgname}/${pkgname}" ]; then
 		InternalDir="${srcdir}/${pkgname}/${pkgname}"
-	else
+	elif [ -d "${srcdir}/${pkgname}" ]; then
 		InternalDir="${srcdir}/${pkgname}"
+	else
+		#local
+		InternalDir="${WORKDIR}"
 	fi
 
-	cd "${srcdir}/${pkgname}"
+	cd "${InternalDir}"
 	# Copiar a estrutura de /etc, /usr e /opt para /
-	local dirs=("boot" "etc" "opt" "usr")
+	local dirs=("boot" "etc" "opt" "usr" "var")
 	for dir in "${dirs[@]}"; do
 		if [ -d "${InternalDir}/${dir}" ]; then
 			cp -a "${InternalDir}/${dir}" "${pkgdir}/"
@@ -65,14 +69,10 @@ package() {
 	done
 
 	# Install license file if present
-	if [ -f "LICENSE" ]; then
-		install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-	fi
-
+	[ -f "LICENSE" ] && install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 	# Install documentation if present
-	if [ -f "README.md" ]; then
-		install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
-	fi
+	[ -f "README.md" ] && install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+
 }
 
 pre_install() {
@@ -80,15 +80,27 @@ pre_install() {
 }
 
 post_install() {
-	if [ -n "$user" ]; then
-		log "Aplicando configuracoes para $user"
-		/usr/local/bin/voidbr-copy-skel-inc --user "$user" --force --quiet || true
+	if [ "${update:-}" = "yes" ]; then
+		log "Finalizando upgrade"
+	else
+		log "Finalizando instalação"
 	fi
 
-	log "Ativando serviços"
-	/usr/local/bin/vservice add sddm --quiet || true
+	if [ -n "${MKISO_BUILD:-}" ]; then
+		echo "${YELLOW}[-]${RESET} Build de ISO detectado (MKISO_BUILD) — pulando."
+		return 0
+	fi
 
-	log "Finalizando instalação"
+	if [ -z "${VOIDBR_INSTALLER:-}" ]; then
+		if [ -n "$user" ]; then
+			log "Aplicando configuracoes para $user"
+			/usr/local/bin/voidbr-copy-skel-inc --user "$user" --force --quiet || true
+		fi
+
+		log "Ativando serviços"
+		/usr/local/bin/vservice add sddm --quiet || true
+	fi
+
 	log "${YELLOW}Instalação completa. Reinicie o sistema...${RESET}"
 }
 
@@ -97,5 +109,5 @@ pre_upgrade() {
 }
 
 post_upgrade() {
-	log "Finalizando upgrade"
+	post_install
 }
