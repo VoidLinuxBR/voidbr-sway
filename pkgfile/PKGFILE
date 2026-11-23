@@ -45,6 +45,10 @@ depends=(
 	wofi                    # Lançador de aplicativos e menu de busca
 	xdg-desktop-portal-wlr  # Implementação WLR (Sway) do portal XDG
 	yad
+	# --- voidbr-sway-tweaks (Python + GTK4) ---
+	python3
+	python3-gobject
+	gtk4
 )
 backup=()
 
