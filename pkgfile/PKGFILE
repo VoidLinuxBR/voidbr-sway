@@ -39,6 +39,7 @@ depends=(
 	Thunar                  # Gerenciador de arquivos (XFCE)
 	thunar-archive-plugin   # Integração de compactação no Thunar
 	voidbr-sway-config      # Configuração específica do Sway
+	voidbr-sddm-themes      # Temas da tela de login e a aba "Tela de login" do voidbr-sway-tweaks
 	Waybar                  # Barra de status customizável para Wayland
 	wl-clipboard            # Ferramentas de clipboard (wl-copy/wl-paste)
 	wmenu                   # Menu de seleção estilo dmenu/wofi para Wayland
